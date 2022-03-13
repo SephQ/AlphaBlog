@@ -51,8 +51,10 @@ gem "bootsnap", require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
-  
+  # gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  # gem "debug"     # Try this because it's not working with the above
+  gem "byebug"#, platforms: %i[ mri mingw x64_mingw ]      # Let's just try the old byebug then, like the Udemy video
+
   # Use sqlite3 as a database for Active Record outside of production (Heroku needs Postgres)
   gem "sqlite3", "~> 1.4"
 end

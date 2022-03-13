@@ -6,4 +6,7 @@ class ArticlesController < ApplicationController
     # byebug    # gem 'debug' isn't working, so trying to go back to 'byebug'
     @article = Article.find(params[:id])
   end
+  def index
+    @articles = Article.all
+  end
 end

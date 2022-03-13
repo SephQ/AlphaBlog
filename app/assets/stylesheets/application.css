@@ -79,7 +79,7 @@ body {
   margin-bottom:      30px ;
   border:             2px solid red ;      /* Delete if no border needed */
   /* Adjust sitewide (#5A5A5A) text color */    
-  color:              #E5654A;
+  color:              black;
   /* Adjust sitewide (1.3em) text size */    
   font-size:          1.3em;
   /* Adjust sitewide (Open Sans) font family */    
@@ -92,11 +92,19 @@ body {
   /* margin: 25px 50px 75px 100px;
   margin-left:        130px ;
   } */
-.container {
+.container, header, footer {
   margin: 0 auto;
   padding-left: 30px;
   padding-right: 30px;
   width: 960px;
+  margin-left: 10px; 
+}
+thead {
+  font-weight: bold
+}
+table, td, th {
+  border:             2px solid black ;      /* Delete if no border needed */
+  padding: 2px 8px 2px 8px;
 }
 .hero {
   padding: 22px 80px 66px 80px;

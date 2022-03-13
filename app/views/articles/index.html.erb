@@ -1,0 +1,24 @@
+<header>
+  <h1>Articles listing page</h1>
+  <p><strong>Title: </strong><%= "2 come soon" %></p>
+</header>
+<section class = "container"><table>
+  <thead>
+    <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @articles.each do |article| %>
+    <tr>
+      <td><%= article.title %></td>
+      <td><%= article.description %></td>
+      <td><%= "Some act" %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+</section>

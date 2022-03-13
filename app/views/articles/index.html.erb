@@ -1,13 +1,12 @@
 <header>
-  <h1>Articles listing page</h1>
-  <p><strong>Title: </strong><%= "2 come soon" %></p>
+  <h1>List of Articles</h1>
 </header>
 <section class = "container"><table>
   <thead>
     <tr>
     <th>Title</th>
     <th>Description</th>
-    <th>Actions</th>
+    <th colspan="3">Actions</th>
     </tr>
   </thead>
 
@@ -16,9 +15,23 @@
     <tr>
       <td><%= article.title %></td>
       <td><%= article.description %></td>
-      <td><%= "Some act" %></td>
+      <td><%= link_to 'Show', article_path(article) %></td>
+      <!-- <td><%= link_to 'Edit', edit_article_path(article) %></td> -->
+      <!-- <td><%= button_to 'Show', article_path(article) %></td> -->
+      <td><%= button_to 'Edit', edit_article_path(article) %></td>
+      <!-- removed since it behaved as a get request: <td><%= link_to 'Delete', article_path(article), method: :delete %></td> -->
+      <!-- can't get this to work at all, found below solution <td><%= button_to('Delete', article_path(article) , data: { confirm: "Are you sure?" } ) %></td> -->
+      <td><%= button_to 'Delete', article_path(article), method: :delete, onclick: "return confirm('Are you sure?')" %></td>
+      <!-- <td><%= link_to 'Delete', article_path(article), data: { "turbo-method": :delete , "turbo-confirm": "Are you sure?"} %></td> -->
+      <!-- https://github.com/rails/rails/issues/44170 Rails 7: link_to delete not working (wrong redirect)  -->
+      <!-- <td><%= link_to 'Delete', article_path(article), method: :delete, status: :see_other %></td> -->
     </tr>
     <% end %>
   </tbody>
 </table>
+
+<p>
+  <%= link_to 'Create new article', new_article_path %>
+  <!-- can't use a button to just show something <%= button_to 'Create new article', new_article_path %> -->
+</p>
 </section>

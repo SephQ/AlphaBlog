@@ -46,9 +46,6 @@ footer, header, hgroup, menu, nav, section {
 body {
   line-height: 1;
 }
-ol, ul {
-  list-style: none;
-}
 blockquote, q {
   quotes: none;
 }
@@ -63,6 +60,10 @@ table {
 }
 
 /* Mine below */
+ol, ul {
+  /* list-style: none; */
+  margin-left: 28px
+}
 p {
   color: black;
   font-size: 16px;

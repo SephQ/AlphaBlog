@@ -5,12 +5,13 @@
 
 
 <p>
-  <%= button_to 'Edit', edit_article_path(@article) %>
+  <%= button_to 'Edit', edit_article_path(@article), {method: 'get', class: "btn"} %>
   <%= button_to 'Delete', article_path(@article), method: :delete, onclick: "return confirm('Are you sure?')" %>
-<% if false # comment out the below %>
+<% if false # this comments out the below %>
     <%= link_to 'Edit', edit_article_path(@article) %>
     <%= link_to 'Delete', article_path(@article), method: :delete, data: { confirm: "Are you sure?" } %>
     <%= link_to 'Return to articles listing', articles_path %>
+    <%= button_to "Return to articles listing", articles_path, {method: 'get', class: "btn"} %>
 <% end %>
-  <%= button_to "Return to articles listing", articles_path, {method: 'get', class: "some-class"} %>
+  <%= link_to 'Return to articles listing', articles_path %>
 </p>
